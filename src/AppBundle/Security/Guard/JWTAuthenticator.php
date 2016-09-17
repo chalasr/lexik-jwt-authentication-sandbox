@@ -15,21 +15,14 @@ class JWTAuthenticator extends BaseAuthenticator
      */
     protected function getTokenExtractor()
     {
-        $chain = parent::getTokenExtractor();
+        $chainExtractor = parent::getTokenExtractor();
 
-        $chain->removeExtractor(function (TokenExtractorInterface $ext) {
+        $chainExtractor->removeExtractor(function (TokenExtractorInterface $ext) {
             return $ext instanceof AuthorizationHeaderTokenExtractor;
         });
 
-        $chain->addExtractor(new AuthorizationHeaderTokenExtractor('JWT', 'Authorization'));
+        $chainExtractor->addExtractor(new AuthorizationHeaderTokenExtractor('JWT', 'Authorization'));
 
         return $chain;
-    }
-
-    public function start(Request $request, AuthenticationException $authException = null)
-    {
-        parent::start($request, $authException);
-
-        return;
     }
 }
