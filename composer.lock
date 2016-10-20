@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8adaffc75dd6b2a53d563bc18eda69a5",
-    "content-hash": "6868b52422b9240d013025bf5869e645",
+    "hash": "8f3fec2fd3fd30e9c80ad0f1eb82cf02",
+    "content-hash": "17746fb0525733df88f71bb9e138da2f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -879,17 +879,75 @@
             "time": "2015-08-30 16:36:01"
         },
         {
-            "name": "lexik/jwt-authentication-bundle",
-            "version": "dev-guard_jwt_authenticator",
+            "name": "lcobucci/jwt",
+            "version": "3.2.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/lexik/LexikJWTAuthenticationBundle.git",
-                "reference": "595fa5fface21171a20a5a3e843b61361c4566cc"
+                "url": "https://github.com/lcobucci/jwt.git",
+                "reference": "68a52cdb8e5552e733f60c6775ce06dd414df5f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/595fa5fface21171a20a5a3e843b61361c4566cc",
-                "reference": "595fa5fface21171a20a5a3e843b61361c4566cc",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/68a52cdb8e5552e733f60c6775ce06dd414df5f4",
+                "reference": "68a52cdb8e5552e733f60c6775ce06dd414df5f4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "mdanter/ecc": "~0.3.1",
+                "mikey179/vfsstream": "~1.5",
+                "phpmd/phpmd": "~2.2",
+                "phpunit/php-invoker": "~1.1",
+                "phpunit/phpunit": "~4.5",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "suggest": {
+                "mdanter/ecc": "Required to use Elliptic Curves based algorithms."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lcobucci\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Otávio Cobucci Oblonczyk",
+                    "email": "lcobucci@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+            "keywords": [
+                "JWS",
+                "jwt"
+            ],
+            "time": "2016-10-04 16:37:14"
+        },
+        {
+            "name": "lexik/jwt-authentication-bundle",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikJWTAuthenticationBundle.git",
+                "reference": "05e15967f4dab94c8a75b275692d928a2fbf6d18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/05e15967f4dab94c8a75b275692d928a2fbf6d18",
+                "reference": "05e15967f4dab94c8a75b275692d928a2fbf6d18",
                 "shasum": ""
             },
             "require": {
@@ -901,13 +959,15 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^1.1",
+                "lcobucci/jwt": "~3.2",
                 "phpunit/phpunit": "^4.1|^5.0",
                 "symfony/browser-kit": "^2.8|^3.0",
                 "symfony/phpunit-bridge": "^2.8|^3.0"
             },
             "suggest": {
                 "gesdinet/jwt-refresh-token-bundle": "Implements a refresh token system over Json Web Tokens in Symfony",
-                "spomky-labs/lexik-jose-bridge": "JWT Token encoder with encryption support"
+                "lcobucci/jwt": "For using the LcobucciJWTEncoder",
+                "spomky-labs/lexik-jose-bridge": "Provides a JWT Token encoder with encryption support"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -969,7 +1029,7 @@
                 "rest",
                 "symfony"
             ],
-            "time": "2016-09-17 10:27:59"
+            "time": "2016-10-16 08:17:51"
         },
         {
             "name": "monolog/monolog",
@@ -977,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952"
+                "reference": "214b8ef34b17ed0fcd3a5e027ef5a9ae9ebeb193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f42fbdfd53e306bda545845e4dbfd3e72edb4952",
-                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/214b8ef34b17ed0fcd3a5e027ef5a9ae9ebeb193",
+                "reference": "214b8ef34b17ed0fcd3a5e027ef5a9ae9ebeb193",
                 "shasum": ""
             },
             "require": {
@@ -993,7 +1053,7 @@
                 "psr/log-implementation": "1.0.0"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "^2.4.9",
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "jakub-onderka/php-parallel-lint": "0.9",
@@ -1047,7 +1107,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-07-29 03:23:52"
+            "time": "2016-10-03 18:31:30"
         },
         {
             "name": "namshi/jose",
@@ -1212,12 +1272,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/d8e60a5619fff77f9669da8997697443ef1a1d7e",
-                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
@@ -1251,7 +1311,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-01-06 21:40:42"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -1259,17 +1319,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "b6dcd04595e4db95ead22ddea58c397864e00c32"
+                "reference": "7bc47dcfdbde6d567e1a834577d1c04ddb970281"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/b6dcd04595e4db95ead22ddea58c397864e00c32",
-                "reference": "b6dcd04595e4db95ead22ddea58c397864e00c32",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/7bc47dcfdbde6d567e1a834577d1c04ddb970281",
+                "reference": "7bc47dcfdbde6d567e1a834577d1c04ddb970281",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9",
-                "sensiolabs/security-checker": "~3.0",
+                "sensiolabs/security-checker": "~3.0|~4.0",
                 "symfony/class-loader": "~2.3|~3.0",
                 "symfony/config": "~2.3|~3.0",
                 "symfony/dependency-injection": "~2.3|~3.0",
@@ -1303,20 +1363,20 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2016-09-14 20:25:12"
+            "time": "2016-10-08 18:50:33"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "dev-master",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "73ce6e89c2751d8257c2fe29788fc5830a04e023"
+                "reference": "0fd0205ae3503132c90059bad3781f39b2b32107"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/73ce6e89c2751d8257c2fe29788fc5830a04e023",
-                "reference": "73ce6e89c2751d8257c2fe29788fc5830a04e023",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/0fd0205ae3503132c90059bad3781f39b2b32107",
+                "reference": "0fd0205ae3503132c90059bad3781f39b2b32107",
                 "shasum": ""
             },
             "require": {
@@ -1368,7 +1428,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2016-09-12 20:05:56"
+            "time": "2016-10-12 02:10:54"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -1420,12 +1480,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "de19df332219d73a2704525ba75aabd7dfaa303b"
+                "reference": "a6d30977565081bc9b177b627bff2e2ba905224c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/de19df332219d73a2704525ba75aabd7dfaa303b",
-                "reference": "de19df332219d73a2704525ba75aabd7dfaa303b",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/a6d30977565081bc9b177b627bff2e2ba905224c",
+                "reference": "a6d30977565081bc9b177b627bff2e2ba905224c",
                 "shasum": ""
             },
             "require": {
@@ -1465,7 +1525,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-09-07 22:19:22"
+            "time": "2016-10-09 11:45:02"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1473,12 +1533,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "bbce38687c184d929d45ad48240a1f796edc3b47"
+                "reference": "f3ae7ece802c9a011b28fe08735cc1f96f5baef0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/bbce38687c184d929d45ad48240a1f796edc3b47",
-                "reference": "bbce38687c184d929d45ad48240a1f796edc3b47",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/f3ae7ece802c9a011b28fe08735cc1f96f5baef0",
+                "reference": "f3ae7ece802c9a011b28fe08735cc1f96f5baef0",
                 "shasum": ""
             },
             "require": {
@@ -1525,7 +1585,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2016-08-26 08:04:47"
+            "time": "2016-10-03 09:13:09"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -1927,12 +1987,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "ad7bc0322a219d62fe1886ed6a88e169813e71b9"
+                "reference": "76817cdb70df383a8737e12afd3a902a9bc4fa6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/ad7bc0322a219d62fe1886ed6a88e169813e71b9",
-                "reference": "ad7bc0322a219d62fe1886ed6a88e169813e71b9",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/76817cdb70df383a8737e12afd3a902a9bc4fa6e",
+                "reference": "76817cdb70df383a8737e12afd3a902a9bc4fa6e",
                 "shasum": ""
             },
             "require": {
@@ -1945,7 +2005,7 @@
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
-                "twig/twig": "~1.23|~2.0"
+                "twig/twig": "~1.26|~2.0"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0",
@@ -2060,7 +2120,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-09-14 22:47:38"
+            "time": "2016-10-12 20:30:28"
         },
         {
             "name": "twig/twig",
@@ -2068,12 +2128,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "1f831ae9ba0a8d49bcccc5743ae5823a754f6f56"
+                "reference": "907366d05379156152bcb1862931a1687be71200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/1f831ae9ba0a8d49bcccc5743ae5823a754f6f56",
-                "reference": "1f831ae9ba0a8d49bcccc5743ae5823a754f6f56",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/907366d05379156152bcb1862931a1687be71200",
+                "reference": "907366d05379156152bcb1862931a1687be71200",
                 "shasum": ""
             },
             "require": {
@@ -2122,7 +2182,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-08-25 17:56:11"
+            "time": "2016-10-05 18:16:59"
         }
     ],
     "packages-dev": [
@@ -2132,12 +2192,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4"
+                "reference": "b9be7f1b3b2e8bcfc1debefc901b71da923a5e5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/3c20d16512f37d2be159eca0411b99a141b90fa4",
-                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/b9be7f1b3b2e8bcfc1debefc901b71da923a5e5c",
+                "reference": "b9be7f1b3b2e8bcfc1debefc901b71da923a5e5c",
                 "shasum": ""
             },
             "require": {
@@ -2176,7 +2236,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2016-09-06 01:30:19"
+            "time": "2016-10-10 14:17:42"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -2184,12 +2244,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "ac05d02ee48dc9cff6e7d04a581b890b3b7b1845"
+                "reference": "d5ab07f582cb6cea85100f8d2df022f901415cd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/ac05d02ee48dc9cff6e7d04a581b890b3b7b1845",
-                "reference": "ac05d02ee48dc9cff6e7d04a581b890b3b7b1845",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/d5ab07f582cb6cea85100f8d2df022f901415cd0",
+                "reference": "d5ab07f582cb6cea85100f8d2df022f901415cd0",
                 "shasum": ""
             },
             "require": {
@@ -2234,14 +2294,12 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2016-09-13 10:21:41"
+            "time": "2016-09-24 08:11:35"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "lexik/jwt-authentication-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

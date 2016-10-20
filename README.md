@@ -7,7 +7,7 @@ What's inside
 --------------
 
 - [Symfony](https://github.com/symfony/symfony) ~3.1
-- [LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle) ~1.6
+- [LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle) ~2.0
 
 Get started
 ------------
@@ -51,6 +51,6 @@ $ curl -X POST http://localhost:8000/login_check -d _username=johndoe -d _passwo
 
 Access a secured resource:
 ```
-$ curl -H "Authorization: Bearer [TOKEN]" http://localhost:8000/api
+$ curl -H "Authorization: JWT [TOKEN]" http://localhost:8000/api
 -> Logged in as johndoe
 ```

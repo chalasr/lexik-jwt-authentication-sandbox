@@ -23,6 +23,6 @@ class JWTAuthenticator extends BaseAuthenticator
 
         $chainExtractor->addExtractor(new AuthorizationHeaderTokenExtractor('JWT', 'Authorization'));
 
-        return $chain;
+        return $chainExtractor;
     }
 }
