@@ -10,7 +10,6 @@
     "autoload-dev": {
         "psr-4": { "Tests\\": "tests/" }
     },
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
         "symfony/symfony": "3.1.*",
