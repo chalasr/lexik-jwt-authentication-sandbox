@@ -11,15 +11,13 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 class JWTAuthenticator extends BaseAuthenticator
 {
     /**
+     * Adds a new AuthorizationHeader token extractor for prefixing with "JWT" instead of "Bearer"
+     *
      * {@inheritdoc}
      */
     protected function getTokenExtractor()
     {
         $chainExtractor = parent::getTokenExtractor();
-
-        $chainExtractor->removeExtractor(function (TokenExtractorInterface $ext) {
-            return $ext instanceof AuthorizationHeaderTokenExtractor;
-        });
 
         $chainExtractor->addExtractor(new AuthorizationHeaderTokenExtractor('JWT', 'Authorization'));
 

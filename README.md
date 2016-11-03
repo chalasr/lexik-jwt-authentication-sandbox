@@ -12,19 +12,19 @@ What's inside
 Get started
 ------------
 
-Clone the project:
-```
+Create the project using composer:
+```sh
+$ composer create-project rch/lexik-jwt-authentication-sandbox
+``` 
+
+Or clone it using git:
+```sh
 $ git clone https://github.com/chalasr/lexik-jwt-authentication-sandbox
 ```
 
-Install the dependencies:
-```
-$ cd lexik-jwt-authentication-sandbox
-$ composer install
-```
-
 Create the database schema:
-```
+```sh
+$ cd lexik-jwt-authentication-sandbox
 $ php bin/console doctrine:database:create
 $ php bin/console doctrine:schema:update --force
 ```
@@ -33,7 +33,7 @@ Usage
 ------
 
 Run the web server:
-```
+```sh
 $ php bin/console server:run
 ```
 
@@ -49,8 +49,8 @@ $ curl -X POST http://localhost:8000/login_check -d _username=johndoe -d _passwo
 -> { "token": "[TOKEN]" }  
 ```
 
-Access a secured resource:
+Access a secured route:
 ```
-$ curl -H "Authorization: JWT [TOKEN]" http://localhost:8000/api
+$ curl -H "Authorization: Bearer [TOKEN]" http://localhost:8000/api
 -> Logged in as johndoe
 ```
