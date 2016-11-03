@@ -12,19 +12,15 @@ What's inside
 Get started
 ------------
 
-Create the project using composer:
-```sh
-$ composer create-project chalasr/lexik-jwt-authentication-sandbox
-``` 
-
-Or clone it using git:
+Clone the project:
 ```sh
 $ git clone https://github.com/chalasr/lexik-jwt-authentication-sandbox
+$ cd lexik-jwt-authentication-sandbox
+$ git checkout json-login
 ```
 
 Create the database schema:
 ```sh
-$ cd lexik-jwt-authentication-sandbox
 $ php bin/console doctrine:database:create
 $ php bin/console doctrine:schema:update --force
 ```
@@ -45,7 +41,7 @@ $ curl -X POST http://localhost:8000/register -d _username=johndoe -d _password=
 
 Get a JWT token:
 ```
-$ curl -X POST http://localhost:8000/login_check -d _username=johndoe -d _password=test
+$ curl -X POST -H "Content-Type: application/json" http://localhost:8000/login_check -d '{"username":"johndoe","password":"test"}'
 -> { "token": "[TOKEN]" }  
 ```
 
