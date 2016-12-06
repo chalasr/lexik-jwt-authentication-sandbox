@@ -39,18 +39,24 @@ $ php bin/console server:run
 
 Register a new user:
 ```
-$ curl -X POST http://localhost:8000/register -d _username=johndoe -d _password=test
+$ curl -X POST http://localhost:8000/register -d _username=johndoe -d _password=test -d _email=john@doe.fr
 -> User johndoe successfully created
 ```
 
 Get a JWT token:
 ```
-$ curl -X POST http://localhost:8000/login_check -d _username=johndoe -d _password=test
+$ curl -X POST http://localhost:8000/login_check -d _email=john@doe.fr -d _password=test
 -> { "token": "[TOKEN]" }  
 ```
 
-Access a secured route:
+Try to access a secured route:
 ```
 $ curl -H "Authorization: Bearer [TOKEN]" http://localhost:8000/api
--> Logged in as johndoe
+-> 
+{
+  "code": 401,
+  "message": "Unable to load an user with property \"username\" = \"papi\". If the user identity has changed, you must renew the token. Otherwise, verify that the \"lexik_jwt_authentication.user_identity_field\" config option is correctly set."
+}
 ```
+
+Uncomment [this line](https://github.com/chalasr/lexik-jwt-authentication-sandbox/blob/without_user_identity_field/app/config/config.yml#L69), retry to access the secured route, it works.

@@ -7,7 +7,7 @@ security:
         entity_provider:
             entity:
                 class: AppBundle:User
-                property: username
+                property: email
 
     firewalls:
         dev:
@@ -20,6 +20,7 @@ security:
             form_login:
                 check_path: /login_check
                 require_previous_session: false
+                username_parameter: _email
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
 

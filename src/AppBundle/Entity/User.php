@@ -24,6 +24,11 @@ class User implements UserInterface
     private $username;
 
     /**
+     * @ORM\Column(type="string", length=255, unique=true, nullable=true)
+     */
+    private $email;
+
+    /**
      * @ORM\Column(type="string", length=500)
      */
     private $password;
@@ -33,15 +38,21 @@ class User implements UserInterface
      */
     private $isActive;
 
-    public function __construct($username)
+    public function __construct($username, $email = null)
     {
         $this->isActive = true;
         $this->username = $username;
+        $this->email = $email;
     }
 
     public function getUsername()
     {
         return $this->username;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     public function getSalt()

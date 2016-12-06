@@ -22,8 +22,9 @@ class DefaultController extends Controller
 
         $username = $request->request->get('_username');
         $password = $request->request->get('_password');
+        $email = $request->request->get('_email');
 
-        $user = new User($username);
+        $user = new User($username, $email);
         $user->setPassword($encoder->encodePassword($user, $password));
 
         $em->persist($user);

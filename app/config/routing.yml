@@ -1,7 +1,10 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
-    
+
 login_check:
     path:     /login_check
     methods:  [POST]
+
+logout:
+    path:     /logout
