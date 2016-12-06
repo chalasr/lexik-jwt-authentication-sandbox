@@ -42,17 +42,22 @@ class User implements UserInterface
     {
         $this->isActive = true;
         $this->username = $username;
-        $this->email = $email;
+        $this->email    = $email;
     }
 
     public function getUsername()
     {
-        return $this->username;
+        return $this->getEmail();
     }
 
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function getNickname()
+    {
+        return $this->username;
     }
 
     public function getSalt()
@@ -72,7 +77,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return ['ROLE_USER'];
     }
 
     public function eraseCredentials()
