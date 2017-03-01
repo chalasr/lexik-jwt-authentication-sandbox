@@ -14,7 +14,7 @@ Get started
 
 Create the project using composer:
 ```sh
-$ composer create-project rch/lexik-jwt-authentication-sandbox
+$ composer create-project chalasr/lexik-jwt-authentication-sandbox
 ``` 
 
 Or clone it using git:

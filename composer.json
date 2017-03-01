@@ -1,5 +1,5 @@
 {
-    "name": "rch/lexik-jwt-authentication-sandbox",
+    "name": "chalasr/lexik-jwt-authentication-sandbox",
     "license": "MIT",
     "type": "project",
     "description": "Sandbox for the LexikJWTAuthenticationBundle Symfony bundle",
