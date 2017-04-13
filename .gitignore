@@ -10,6 +10,7 @@
 !app/logs/.gitkeep
 !app/sessions/.gitkeep
 # Cache, Session and logs (Symfony3)
+/var/data/*
 /var/cache/*
 /var/logs/*
 /var/sessions/*
