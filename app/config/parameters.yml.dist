@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # JWT
+    env(JWT_PASSPHRASE): foobar
+    env(JWT_TTL): 3600
