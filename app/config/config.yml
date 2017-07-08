@@ -41,7 +41,7 @@ twig:
 doctrine:
     dbal:
         driver:   pdo_sqlite
-        path:     "%kernel.root_dir%/../var/database.sqlite"
+        path:     "%kernel.root_dir%/../var/data/database.sqlite"
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
