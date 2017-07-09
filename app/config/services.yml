@@ -2,3 +2,7 @@ services:
     app.jwt_token_authenticator:
         parent: lexik_jwt_authentication.security.guard.jwt_token_authenticator
         class: AppBundle\Security\Guard\JWTAuthenticator
+    app.listener.authentication_success_response:
+        class: AppBundle\EventListener\AuthenticationSuccessListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
