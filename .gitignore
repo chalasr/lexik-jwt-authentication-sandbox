@@ -17,6 +17,7 @@
 !var/cache/.gitkeep
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
+!var/data/.gitkeep
 
 # Ansible
 /ansible/*
