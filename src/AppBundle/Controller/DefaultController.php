@@ -37,6 +37,10 @@ class DefaultController extends Controller
      */
     public function apiAction()
     {
-        return new Response(sprintf('Logged in as %s', $this->getUser()->getUsername()));
+        if ($this->getUser()) {
+            return new Response(sprintf('Logged in as %s', $this->getUser()->getUsername()));
+        }
+
+        return new Response('Anonymous');
     }
 }

@@ -31,7 +31,7 @@ security:
         api:
             pattern:  ^/api
             stateless: true
-            anonymous: false
+            anonymous: true
             provider: entity_provider
             guard:
                 authenticators:
@@ -40,4 +40,4 @@ security:
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api, roles: [IS_AUTHENTICATED_FULLY, IS_AUTHENTICATED_ANONYMOUSLY] }
