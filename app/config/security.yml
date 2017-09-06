@@ -1,42 +1,71 @@
 security:
+
     encoders:
         AppBundle\Entity\User:
-            algorithm: bcrypt
+            algorithm:        sha512
+            encode_as_base64: true
+            iterations:       5000
+
+        Symfony\Component\Security\Core\User\User:
+            algorithm:  sha1
+            iterations: 1
+            encode_as_base64: false
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN]
 
     providers:
-        entity_provider:
+        default:
             entity:
                 class: AppBundle:User
                 property: username
+        in_memory:
+            memory:
+                users:
+                    - { name: "USERNAME", password: "PASSWORD", roles: 'ROLE_SUPER_ADMIN' }
+        chain_provider:
+            chain:
+                providers: [in_memory, default]
 
     firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        login:
+
+        #main:
+            #anonymous: ~
+            # activate different ways to authenticate
+
+            #http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+        api_login:
             pattern:  ^/login
             stateless: true
             anonymous: true
+            provider: default
             form_login:
-                check_path: /login_check
+                check_path:               /login_check
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
                 require_previous_session: false
-                success_handler: lexik_jwt_authentication.handler.authentication_success
-                failure_handler: lexik_jwt_authentication.handler.authentication_failure
-
-        register:
-            pattern:  ^/register
-            stateless: true
-            anonymous: true
 
         api:
-            pattern:  ^/api
+            pattern:   ^/api
             stateless: true
-            anonymous: false
-            provider: entity_provider
+            http_digest:
+                provider: in_memory
+                realm:    "Secured Demo API"
+                secret:   "SECRET"
             guard:
+                provider: default
                 authenticators:
-                    - app.jwt_token_authenticator
-
+                    - lexik_jwt_authentication.jwt_token_authenticator
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
