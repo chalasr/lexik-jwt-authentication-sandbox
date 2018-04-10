@@ -19,10 +19,17 @@ $ cd lexik-jwt-authentication-sandbox
 $ git checkout flex
 ```
 
+Install dependencies and libraries:
+
+```
+$ sudo apt-get install php-sqlite3 
+$ composer install
+```
+
 Create the database schema:
 ```sh
-$ php bin/console doctrine:database:create
-$ php bin/console doctrine:schema:update --force
+$ bin/console doctrine:database:create
+$ bin/console doctrine:schema:update --force
 ```
 
 Usage
@@ -30,7 +37,7 @@ Usage
 
 Run the web server:
 ```sh
-$ php bin/console server:run
+$ bin/console server:run
 ```
 
 Register a new user:
