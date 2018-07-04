@@ -56,17 +56,32 @@
     "doctrine/orm": {
         "version": "v2.6.0"
     },
-    "jdorn/sql-formatter": {
-        "version": "v1.2.17"
-    },
-    "lexik/jwt-authentication-bundle": {
-        "version": "2.3",
+    "easycorp/easy-log-handler": {
+        "version": "1.0",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "2.3",
-            "ref": "751ee6748c1026fa4350c155d1b3a77b7ddca69c"
+            "version": "1.0",
+            "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
         }
+    },
+    "jdorn/sql-formatter": {
+        "version": "v1.2.17"
+    },
+    "lcobucci/jwt": {
+        "version": "3.2.2"
+    },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "509b1542f3180a1cfe248ade8b7bf5092c2d4127"
+        }
+    },
+    "monolog/monolog": {
+        "version": "1.23.0"
     },
     "namshi/jose": {
         "version": "7.2.3"
@@ -106,6 +121,18 @@
     },
     "symfony/debug": {
         "version": "v4.0.4"
+    },
+    "symfony/debug-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "71d29aaf710fd59cd3abff2b1ade907ed73103c6"
+        }
+    },
+    "symfony/debug-pack": {
+        "version": "v1.0.5"
     },
     "symfony/dependency-injection": {
         "version": "v4.0.4"
@@ -150,13 +177,28 @@
         "version": "v4.0.4"
     },
     "symfony/inflector": {
-        "version": "v4.0.4"
+        "version": "v4.1.1"
     },
     "symfony/lts": {
         "version": "4-dev"
     },
+    "symfony/monolog-bridge": {
+        "version": "v4.1.1"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "371d1a2b69984710646b09a1182ef1d4308c904f"
+        }
+    },
     "symfony/orm-pack": {
         "version": "v1.0.5"
+    },
+    "symfony/polyfill-ctype": {
+        "version": "v1.8.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
@@ -167,8 +209,11 @@
     "symfony/process": {
         "version": "v4.0.4"
     },
+    "symfony/profiler-pack": {
+        "version": "v1.0.3"
+    },
     "symfony/property-access": {
-        "version": "v4.0.4"
+        "version": "v4.1.1"
     },
     "symfony/routing": {
         "version": "4.0",
@@ -180,7 +225,7 @@
         }
     },
     "symfony/security": {
-        "version": "v4.0.4"
+        "version": "v4.1.1"
     },
     "symfony/security-bundle": {
         "version": "3.3",
@@ -188,11 +233,35 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.3",
-            "ref": "34eb245ce4194e7ae713558084180e2c532e7afd"
+            "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
+        }
+    },
+    "symfony/stopwatch": {
+        "version": "v4.1.1"
+    },
+    "symfony/twig-bridge": {
+        "version": "v4.1.1"
+    },
+    "symfony/twig-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "f75ac166398e107796ca94cc57fa1edaa06ec47f"
         }
     },
     "symfony/var-dumper": {
         "version": "v4.0.4"
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
+        }
     },
     "symfony/web-server-bundle": {
         "version": "3.3",
@@ -205,6 +274,9 @@
     },
     "symfony/yaml": {
         "version": "v4.0.4"
+    },
+    "twig/twig": {
+        "version": "v2.4.8"
     },
     "zendframework/zend-code": {
         "version": "3.3.0"
