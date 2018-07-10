@@ -1,11 +1,11 @@
 {
+    "name": "chalasr/lexik-jwt-authentication-sandbox",
+    "description": "Sandbox for the LexikJWTAuthenticationBundle Symfony bundle",
     "type": "project",
-    "license": "proprietary",
     "require": {
         "php": "^7.1.3",
         "ext-iconv": "*",
         "lexik/jwt-authentication-bundle": "^2.5",
-        "namshi/jose": "^7.2",
         "symfony/console": "^4.0",
         "symfony/debug-pack": "^1.0",
         "symfony/flex": "^1.0",
