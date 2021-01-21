@@ -30,7 +30,7 @@ Usage
 
 Run the web server:
 ```sh
-$ php bin/console server:run
+$ symfony serve
 ```
 
 Register a new user:
